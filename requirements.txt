@@ -1,0 +1,15 @@
+django
+djangorestframework
+django-crispy-forms
+django-allauth
+django-environ
+pillow
+whitenoise
+django-extensions
+django-debug-toolbar
+gunicorn
+psycopg2
+celery
+django-compressor
+coverage
+sentry-sdk

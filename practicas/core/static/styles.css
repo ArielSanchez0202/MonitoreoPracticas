@@ -1,0 +1,20 @@
+.mainbody{
+    background-color: #CBCFD2;
+}
+.login{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    width: 500px;
+    height: 400px;
+    background-color: #FFFAFA;
+
+}
+.logintextbox{
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    width: 80%;
+    height: 10%;
+    background-color: #DCDADA;
+}
