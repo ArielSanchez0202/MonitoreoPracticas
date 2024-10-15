@@ -4,21 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gestion de Practicas</title>
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Nunito">
     <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif; /* Cambiar la fuente a 'Roboto' */
+        }
+    </style>
+
 </head>
 <body class="mainbody">
-    <form method="post" class="login">
+    <img class="imagen_login" src="{% static 'images2.jpg' %}">
+    <form method="post">
         {% csrf_token %}
-        <h1 style="position: absolute; top: 5%;left: 5%;">Nombre de usuario</h1>
-        <label for="usuario" for="password" style="position: absolute; top: 25%; left: 5%;">
-            <input type="text" name="username">
-        </label>
-        <h2 style="position: absolute; top: 40%;left: 5%;"> Contraseña </h2>
-        <label for="password" style="position: absolute; top: 55%; left: 5%;">
-            <input type="password" name="password">
-        </label>
-        <button type="submit" style="position: absolute; top: 70%; left: 5%;">Iniciar sesion</button>
+        <img src="{% static 'images3.jpg' %}">
+        <h1 >Nombre de usuario</h1>
+        <input type="text" name="username">
+        <h2> Contraseña </h2>
+        <input type="password" name="password">
+        <button type="submit">Iniciar sesion</button>
     </form>
 </body>
 </html>

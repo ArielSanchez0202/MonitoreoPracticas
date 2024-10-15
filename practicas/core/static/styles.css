@@ -1,14 +1,78 @@
 .mainbody{
     background-color: #CBCFD2;
 }
-.login{
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    width: 500px;
-    height: 400px;
-    background-color: #FFFAFA;
 
+.imagen_login{
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(5px);
+    z-index: -1; 
+    pointer-events: none;
+}
+
+.mainbody form{
+    display: block;
+    position: absolute;
+    width: 25%;
+    height: 70%;
+    background-color: #FFFAFA;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+}
+
+.mainbody form img{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 100%;
+    height: 40%;
+}
+
+.mainbody form h1,h2,input,button{
+    position: relative;
+    top: 5%;
+    display: block;
+    margin-left: 8%;
+    margin-top: 4%;
+}
+
+.mainbody form h1,h2{
+    font-size: 20px;
+    font-weight: 300;
+    color: #555;
+}
+
+.mainbody form input{
+    width: 78%; 
+    padding: 10px;
+    border: 2px solid #ccc; 
+    border-radius: 5px;
+    font-size: 16px; 
+    font-weight: 300; 
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none; 
+}
+
+.mainbody form button{
+    position: relative;
+    top: 10%;
+    width: 83%;
+    height: 8%;
+    border: none;
+    background-color: rgb(247, 99, 99);
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    transition: background-color 0.5s ease;
+}
+
+.mainbody form button:hover{
+    background-color: rgb(168, 58, 58);
 }
 
 .sidebar{
@@ -41,6 +105,7 @@
     border-radius: 5px;
     cursor: pointer; 
     transition: background-color 0.5s ease;
+    font-weight: 500;
 }
 
 .sidebutton a:last-child{
@@ -50,6 +115,14 @@
 
 .sidebutton a:hover{
     background-color: red;
+}
+
+.imagen_perfil{
+    position: absolute;
+    border-radius: 50%;
+    left: -0.0005px;
+    top: 13%;
+    z-index: 2;
 }
 
 
