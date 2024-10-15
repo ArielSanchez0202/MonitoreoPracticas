@@ -1,0 +1,24 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body class="mainbody">
+    <form method="post" class="login">
+        {% csrf_token %}
+        <h1 style="position: absolute; top: 5%;left: 5%;">Nombre de usuario</h1>
+        <label for="usuario" for="password" style="position: absolute; top: 25%; left: 5%;">
+            <input type="text" name="username">
+        </label>
+        <h2 style="position: absolute; top: 40%;left: 5%;"> Contraseña </h2>
+        <label for="password" style="position: absolute; top: 55%; left: 5%;">
+            <input type="password" name="password">
+        </label>
+        <button type="submit" style="position: absolute; top: 70%; left: 5%;">Iniciar sesion</button>
+    </form>
+</body>
+</html>

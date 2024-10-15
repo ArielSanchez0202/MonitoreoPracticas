@@ -5,10 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion de Practicas y Titulos</title>
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Nunito">
     <link rel="stylesheet" href="{% static 'styles.css' %}">
 
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif; /* Cambiar la fuente a 'Roboto' */
+        }
+    </style>
 </head>
 <body class="mainbody">
+    
+    <div class="sidebar">
+        <img src="{% static 'images.png' %}">
+        <div class="sidebutton">
+            <a href="{% url 'salir' %}"> Mi Perfil</a>
+            <a href="{% url 'salir' %}"> Listado de Prácticas</a>
+            <a href="{% url 'salir' %}"> Solicitudes de Prácticas</a>
+            <a href="{% url 'salir' %}"> Informe de Avances</a>
+            <a href="{% url 'salir' %}"> Autoevaluaciones</a>
+            <a href="{% url 'salir' %}"> Documentos</a>
+            <a href="{% url 'salir' %}"> Informes Finales</a>
+            <a href="{% url 'salir' %}"> Cerrar sesion</a>
+        </div>
+    </div>
     <main>
         {% block content%}
         {% endblock %}
