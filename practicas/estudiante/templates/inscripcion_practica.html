@@ -6,53 +6,99 @@
 </head>
 <body>
     <div class="container">
+        <button type="button" class="back-button" onclick="window.history.back()">
+            ← Regresar
+        </button>
         <h1>Inscripción de Práctica Profesional</h1>
         
         <form>
-            <fieldset>
-                <legend>Datos del estudiante:</legend>
+            <legend>Datos del estudiante:</legend>
                 
-                <div class="form-group">
-                    <label for="nombre_completo">Nombre Completo</label>
-                    <input type="text" id="nombre_completo" name="nombre_completo" value="Nicolás Moisés Paez Pimentel">
-                </div>
+            <div class="form-group">
+                <label for="nombre_completo">Nombre Completo</label>
+                <input type="text" id="nombre_completo" name="nombre_completo" value="Nicolás Moisés Paez Pimentel">
+            </div>
 
-                <div class="form-group">
-                    <label for="rut">Rut</label>
-                    <input type="text" id="rut" name="rut" value="11.111.111-1">
-                </div>
+            <div class="form-group">
+                <label for="rut">Rut</label>
+                <input type="text" id="rut" name="rut" value="11.111.111-1">
+            </div>
 
-                <div class="form-group">
-                    <label for="domicilio">Domicilio</label>
-                    <input type="text" id="domicilio" name="domicilio" value="Av. Pedro de Valdivia 425">
-                </div>
+            <div class="form-group">
+                <label for="domicilio">Domicilio</label>
+                <input type="text" id="domicilio" name="domicilio" value="Av. Pedro de Valdivia 425">
+            </div>
 
-                <div class="form-group">
-                    <label for="telefono">Número de Teléfono</label>
-                    <input type="text" id="telefono" name="telefono" value="+56 9 12345678">
-                </div>
+            <div class="form-group">
+                <label for="telefono">Número de Teléfono</label>
+                <input type="text" id="telefono" name="telefono" value="+56 9 12345678">
+            </div>
 
-                <div class="form-group">
-                    <label for="correo">Correo Electrónico</label>
-                    <input type="email" id="correo" name="correo" value="nicolas.paez@cloud.uautonoma.cl">
-                </div>
+            <div class="form-group">
+                <label for="correo">Correo Electrónico</label>
+                <input type="email" id="correo" name="correo" value="nicolas.paez@cloud.uautonoma.cl">
+            </div>
 
-                <div class="form-group">
-                    <label for="carrera">Carrera</label>
-                    <input type="text" id="carrera" name="carrera" value="Ingeniería Civil en Informática">
-                </div>
+            <div class="form-group">
+                <label for="carrera">Carrera</label>
+                <input type="text" id="carrera" name="carrera" value="Ingeniería Civil en Informática">
+            </div>
 
-                <div class="form-group">
-                    <label for="practica1">Práctica I</label>
-                    <input type="checkbox" id="practica1" name="practica1">
-                </div>
+            <div class="form-group">
+                <label for="practica1">Práctica I</label>
+                <input type="checkbox" id="practica1" name="practica1">
+            </div>
 
-                <div class="form-group">
-                    <label for="practica2">Práctica II</label>
-                    <input type="checkbox" id="practica2" name="practica2" checked>
-                </div>
+            <div class="form-group">
+                <label for="practica2">Práctica II</label>
+                <input type="checkbox" id="practica2" name="practica2" checked>
+            </div>
 
-            </fieldset>
+            <legend>Datos de la Empresa/Institución:</legend>
+                
+            <div class="form-group">
+                <label for="razón">Razón Social</label>
+                <input type="text" id="razón" name="razón">
+            </div>
+
+            <div class="form-group">
+                <label for="direccion">Dirección</label>
+                <input type="text" id="direccion" name="direccion">
+            </div>
+
+            <div class="form-group">
+                <label for="jefe">Jefe Directo</label>
+                <input type="text" id="jefe" name="jefe">
+            </div>
+
+            <div class="form-group">
+                <label for="cargo">Cargo</label>
+                <input type="text" id="cargo" name="cargo">
+            </div>
+
+            <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="text" id="telefono" name="telefono">
+            </div>
+
+            <div class="form-group">
+                <label for="correo">Correo Eléctronico</label>
+                <input type="email" id="correo" name="correo">
+            </div>
+
+            <legend>Datos de la Práctica:</legend>
+                
+            <div class="form-group">
+                <label for="inicio">Fecha de Inicio</label>
+                <input type="text" id="inicio" name="inicio">
+            </div>
+
+            <div class="form-group">
+                <label for="termino">Fecha de Termino</label>
+                <input type="text" id="termino" name="termino">
+            </div>
+
+            <p>*Considerar 7 semanas de práctica aproximadamente con jornada de 45 hrs (315 horas) </p>
 
             <button type="submit">Enviar</button>
         </form>
