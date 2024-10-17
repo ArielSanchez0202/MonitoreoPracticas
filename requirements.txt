@@ -13,3 +13,5 @@ celery
 django-compressor
 coverage
 sentry-sdk
+pandas
+openpyxl
