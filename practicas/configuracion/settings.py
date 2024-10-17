@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'coordinador',
+    'estudiante',
 ]
 
 MIDDLEWARE = [
@@ -84,11 +86,11 @@ WSGI_APPLICATION = 'configuracion.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'GestionPyT',
+        'NAME': 'practicas',
         'USER': 'postgres',
-        'PASSWORD': 'leon189395',
+        'PASSWORD': '692001',
         'HOST': 'localhost',
-        'PORT': '5433',
+        'PORT': '5432',
     }
 }
 
