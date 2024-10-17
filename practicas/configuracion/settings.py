@@ -34,6 +34,11 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'core',
     'listado',
+    'solicitudes',
+    'informes',
+    'autoevaluaciones',
+    'documentos',
+    'infofinal',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'coordinador',
+    'estudiante',
 ]
 
 MIDDLEWARE = [
@@ -80,9 +86,9 @@ WSGI_APPLICATION = 'configuracion.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'GestionPyT',
+        'NAME': 'practicas',
         'USER': 'postgres',
-        'PASSWORD': 'leon189395',
+        'PASSWORD': '692001',
         'HOST': 'localhost',
         'PORT': '5432',
     }

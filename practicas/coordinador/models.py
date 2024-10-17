@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser
+from django.contrib.auth.models import AbstractBaseUser, User
 
 # Modelo Usuario (Extendiendo AbstractBaseUser para personalizar los usuarios)
 class Usuario(AbstractBaseUser):
@@ -22,14 +22,13 @@ class Coordinador(models.Model):
 
 # Modelo Estudiante
 class Estudiante(models.Model):
-    usuario = models.OneToOneField(Usuario, on_delete=models.CASCADE, primary_key=True)
+    usuario = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     rut = models.CharField(max_length=20, unique=True)
     domicilio = models.CharField(max_length=255)
     carrera = models.CharField(max_length=100)
-    coordinador = models.ForeignKey(Coordinador, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
-        return f'Estudiante: {self.usuario.nombre}'
+        return f'Estudiante: {self.usuario.username}'
 
 # Modelo Práctica
 class Practica(models.Model):
