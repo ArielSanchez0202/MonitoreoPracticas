@@ -39,13 +39,13 @@ INSTALLED_APPS = [
     'autoevaluaciones',
     'documentos',
     'infofinal',
+    'coordinador',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'coordinador',
     'estudiante',
 ]
 

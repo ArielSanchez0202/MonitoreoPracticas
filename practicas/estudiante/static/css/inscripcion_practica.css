@@ -59,9 +59,38 @@ input[type="text"], input[type="email"], input[type="number"] {
     border-radius: 5px;
 }
 
-input[type="checkbox"] {
-    transform: scale(1.2);
-    margin-left: 10px;
+.custom-checkbox {
+    display: none; /* Ocultar el checkbox original */
+}
+
+.custom-checkbox + label {
+    position: relative; /* Posiciona el label para el efecto de la "X" */
+    padding-left: 35px; /* Espacio para la "X" */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el label */
+}
+
+.custom-checkbox + label::before {
+    content: ""; /* Crea un nuevo elemento */
+    position: absolute; /* Posicionamiento absoluto para la "X" */
+    left: 0; /* Coloca a la izquierda */
+    top: 50%; /* Centra verticalmente */
+    transform: translateY(-50%); /* Alinea verticalmente */
+    width: 25px; /* Ancho de la "X" */
+    height: 25px; /* Alto de la "X" */
+    border: 2px solid #000; /* Borde de la "X" */
+    border-radius: 4px; /* Esquinas redondeadas */
+    background-color: white; /* Fondo blanco */
+}
+
+.custom-checkbox:checked + label::before {
+    content: "X"; /* Muestra la "X" al marcar */
+    color: white; /* Color de la "X" */
+    background-color: #4CAF50; /* Fondo verde al marcar */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra la "X" */
+    font-weight: bold; /* Negrita */
+    font-size: 1.2em; /* Tamaño de la "X" */
 }
 
 button {

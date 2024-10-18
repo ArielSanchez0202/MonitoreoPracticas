@@ -118,3 +118,6 @@ def descargar_plantilla_estudiantes(request):
     df.to_excel(response, index=False, engine='openpyxl')
     
     return response
+def listar_estudiantes(request):
+    estudiantes = Estudiante.objects.all()  # Obtiene todos los estudiantes
+    return render(request, 'coordinador/listado_estudiantes.html', {'estudiantes': estudiantes})
