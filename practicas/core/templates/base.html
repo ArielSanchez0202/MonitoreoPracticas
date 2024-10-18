@@ -1,3 +1,4 @@
+
 {% load static%}
 <!DOCTYPE html>
 <html lang="es">
@@ -21,7 +22,7 @@
         <img class="imagen_perfil" src="{% static 'perfil.jpg' %}" style="width: 35px; height: 35px;">
         <div class="sidebutton">
             <span>Mi Perfil</span> <!-- Convertido en texto sin link -->
-            <a href="{% url 'coordinador:listado_estudiantes' %}">Listado de Estudiantes</a>
+            <a href="{% url 'coordinador:listar_estudiantes' %}">Listado de Estudiantes</a>
             <a href="{% url 'listado' %}">Listado de Prácticas</a>
             <a href="{% url 'solicitudes' %}">Solicitudes de Prácticas</a>
             <a href="{% url 'informes' %}">Informe de Avances</a>

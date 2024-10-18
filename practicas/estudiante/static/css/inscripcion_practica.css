@@ -55,49 +55,53 @@ label {
 input[type="text"], input[type="email"], input[type="number"] {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid black;
     border-radius: 5px;
 }
 
+/* Ocultar el checkbox original */
 .custom-checkbox {
-    display: none; /* Ocultar el checkbox original */
+    display: none;
 }
 
+/* Estilos del label que representa el checkbox */
 .custom-checkbox + label {
-    position: relative; /* Posiciona el label para el efecto de la "X" */
-    padding-left: 35px; /* Espacio para la "X" */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el label */
+    position: relative;
+    padding-left: 40px; /* Espacio para la casilla personalizada */
+    cursor: pointer;
+    font-size: 1.5em; /* Agrandar el texto si es necesario */
 }
 
+/* Crear la casilla personalizada */
 .custom-checkbox + label::before {
-    content: ""; /* Crea un nuevo elemento */
-    position: absolute; /* Posicionamiento absoluto para la "X" */
-    left: 0; /* Coloca a la izquierda */
-    top: 50%; /* Centra verticalmente */
-    transform: translateY(-50%); /* Alinea verticalmente */
-    width: 25px; /* Ancho de la "X" */
-    height: 25px; /* Alto de la "X" */
-    border: 2px solid #000; /* Borde de la "X" */
-    border-radius: 4px; /* Esquinas redondeadas */
-    background-color: white; /* Fondo blanco */
+    content: ""; /* Crear un cuadro vacío */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px; /* Ajustar el tamaño de la casilla */
+    height: 30px;
+    border: 2px solid #000; /* Borde de la casilla */
+    border-radius: 5px;
+    background-color: #fff; /* Fondo blanco */
 }
 
+/* Casilla marcada con "X" */
 .custom-checkbox:checked + label::before {
-    content: "X"; /* Muestra la "X" al marcar */
-    color: white; /* Color de la "X" */
-    background-color: #4CAF50; /* Fondo verde al marcar */
+    content: "X"; /* Mostrar una "X" en lugar de un "tick" */
+    color: black;
     display: flex;
     justify-content: center;
-    align-items: center; /* Centra la "X" */
-    font-weight: bold; /* Negrita */
-    font-size: 1.2em; /* Tamaño de la "X" */
+    align-items: center;
+    font-size: 1.5em; /* Tamaño de la "X" */
+    font-weight: bold;
 }
 
 button {
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #DD211C;
     color: white;
     border: none;
     border-radius: 5px;
@@ -112,14 +116,14 @@ button {
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
 }
 
-.top-left {
-    position: absolute; /* Permite el posicionamiento absoluto */
-    top: 0; /* Se coloca en la parte superior */
-    left: 150px; /* Se coloca a la izquierda */
-}
-
 .image-button:hover {
     transform: scale(1.1); /* Aumenta el tamaño de la imagen al 110% */
+}
+
+.back-button {
+    position: absolute;
+    top: 5px;
+    left: 0;
 }
 
 .image-button img {
@@ -129,40 +133,37 @@ button {
 
 /* Estilos para la tabla de la empresa */
 table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.table-container {
-    width: 100%;
-    margin-bottom: 20px; /* Margen inferior para separar de otros elementos */
+    margin: 0 auto; /* Centra horizontalmente la tabla */
+    width: 100%; /* Asegura que la tabla ocupe todo el ancho posible */
+    max-width: 800px; /* O un valor adecuado para el tamaño máximo */
+    border-collapse: collapse; /* Asegura que no haya espacio entre las celdas */
 }
 
 th, td {
     border: 1px solid #000;
-    padding: 8px;
+    padding: 10px;
     text-align: left;
-    background-color: white;
-    color: #000; /* El texto de las celdas será negro */
-    font-weight: bold; /* Aplica negrita al texto */
 }
 
-.input-table[type="text"] {
+th {
+    background-color: white;
+    font-weight: bold;
+}
+
+td {
+    background-color: white;
+}
+
+table input[type="text"] {
     width: 100%;
-    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño del input */
+    padding: 8px;
+    border: none;
     background-color: white;
-    padding: 5px;
-    color: #000; /* El texto de los inputs será negro */
-    font-weight: normal; /* Mantén el texto de los inputs en un peso normal */
-    border: none; /* Elimina el borde predeterminado */
-    outline: none; /* Elimina el borde al hacer clic o enfocar el input */
+    box-sizing: border-box;
 }
 
-/* Ajusta la alineación de la tabla para que la línea divisoria esté más a la izquierda */
-.table-container td:first-child {
-    padding-right: 200px; /* Espacio a la derecha de la primera columna */
-}
-
-.table-container td:nth-child(2) {
-    padding-left: 100px; /* Espacio a la izquierda de la segunda columna */
+/* Eliminar el borde al hacer clic (enfocar) en los inputs */
+table input[type="text"]:focus {
+    outline: none; /* Elimina el borde azul o resaltado al hacer clic */
+    border: none;  /* Elimina el borde que aparece al hacer clic */
 }
