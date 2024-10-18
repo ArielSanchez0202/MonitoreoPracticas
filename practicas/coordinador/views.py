@@ -120,4 +120,4 @@ def descargar_plantilla_estudiantes(request):
     return response
 def listar_estudiantes(request):
     estudiantes = Estudiante.objects.all()  # Obtiene todos los estudiantes
-    return render(request, 'coordinador/listado_estudiantes.html', {'estudiantes': estudiantes})
+    return render(request, 'coordinador/listar_estudiantes.html', {'estudiantes': estudiantes})
