@@ -1,0 +1,39 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de Practicas y Titulos</title>
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Nunito">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif; /* Cambiar la fuente a 'Roboto' */
+        }
+    </style>
+</head>
+<body class="mainbody">
+    
+    <div class="sidebar">
+        <img src="{% static 'images.png' %}">
+        <img class="imagen_perfil" src="{% static 'perfil.jpg' %}" style="width: 35px; height: 35px;">
+        <div class="sidebutton">
+            <span>Mi Perfil</span> <!-- Convertido en texto sin link -->
+            <a href="{% url 'coordinador:listar_estudiantes' %}">Listado de Estudiantes</a>
+            <a href="{% url 'listado' %}">Listado de Prácticas</a>
+            <a href="{% url 'solicitudes' %}">Solicitudes de Prácticas</a>
+            <a href="{% url 'informes' %}">Informe de Avances</a>
+            <a href="{% url 'autoevaluaciones' %}">Autoevaluaciones</a>
+            <a href="{% url 'documentos' %}">Documentos</a>
+            <a href="{% url 'infofinal' %}">Informes Finales</a>
+            <a href="{% url 'salir' %}">Cerrar sesión</a>
+        </div>
+    </div>    
+    <main>
+        {% block content%}
+        {% endblock %}
+    </main>
+</body>
+</html>

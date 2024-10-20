@@ -1,40 +1,85 @@
-
-{% load static%}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion de Practicas y Titulos</title>
-    <link rel="stylesheet" href="https://fonts.google.com/specimen/Nunito">
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sidebar Prototipe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="{% static 'styles.css' %}">
-
-    <style>
-        body {
-            font-family: 'Nunito', sans-serif; /* Cambiar la fuente a 'Roboto' */
-        }
-    </style>
-</head>
-<body class="mainbody">
+  </head>
+  <body>
     
-    <div class="sidebar">
-        <img src="{% static 'images.png' %}">
-        <img class="imagen_perfil" src="{% static 'perfil.jpg' %}" style="width: 35px; height: 35px;">
-        <div class="sidebutton">
-            <span>Mi Perfil</span> <!-- Convertido en texto sin link -->
-            <a href="{% url 'coordinador:listar_estudiantes' %}">Listado de Estudiantes</a>
-            <a href="{% url 'listado' %}">Listado de Prácticas</a>
-            <a href="{% url 'solicitudes' %}">Solicitudes de Prácticas</a>
-            <a href="{% url 'informes' %}">Informe de Avances</a>
-            <a href="{% url 'autoevaluaciones' %}">Autoevaluaciones</a>
-            <a href="{% url 'documentos' %}">Documentos</a>
-            <a href="{% url 'infofinal' %}">Informes Finales</a>
-            <a href="{% url 'salir' %}">Cerrar sesión</a>
-        </div>
-    </div>    
-    <main>
-        {% block content%}
+    <style>
+        .navbar-custom {
+          background-color: #343A40;
+        }
+        .navbar-custom li:hover{
+            background-color: red;
+        }
+        .navbar-custom li{
+            padding: 10px;
+            transition: background-color 0.5s ease;;
+            border-radius: 5px;
+        }
+      
+        .text-custom {
+          color: #ffffff; 
+        }
+      </style>
+    <div class="d-flex">
+        <!-- Sidebar vertical -->
+        <nav id="sidebar" class="navbar navbar-dark navbar-custom flex-column p-3 d-none d-lg-block" style="height: 100vh; width: 250px;">
+            <a href="#" class="navbar-brand text-info fw-semibold fs-4" >
+                <img src="{% static 'images.png' %}" class="img-fluid" style="max-width: 100%; height: auto;">
+            </a>
+            <ul class="navbar-nav flex-column mt-4">
+                <li class="nav-item">
+                    <a class="nav-link text-custom" href="{% url 'coordinador:listar_estudiantes' %}">Listado Estudiantes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-custom" href="{% url 'listado' %}">Listado Practicas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-custom" href="{% url 'solicitudes' %}">Solicitudes Practicas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-custom" href="{% url 'informes' %}">Informe Avances</a>
+                </li>
+            </ul>
+        </nav>
+        {% block content %}
+        <!-- Contenido principal -->
+        <div class="container-fluid p-4" style="flex: 1;">
+            <button class="btn btn-info d-lg-none mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarCollapse" aria-controls="sidebarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+            </button>
+    
+            <div class="collapse d-lg-none" id="sidebarCollapse">
+                <nav class="navbar navbar-dark bg-dark flex-column p-3">
+                    <a href="#" class="navbar-brand text-info fw-semibold fs-4">Bonjourno</a>
+                    <ul class="navbar-nav flex-column mt-4">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Sobre Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Contacto</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div> 
+        
         {% endblock %}
-    </main>
-</body>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
 </html>
