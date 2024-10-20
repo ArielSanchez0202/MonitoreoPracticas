@@ -23,7 +23,7 @@
 
         <h1>Inscripción de Práctica Profesional</h1>
         
-        <form method="post">
+        <form method="post" onsubmit="return validateCheckboxes()">
             {% csrf_token %}
             
             <legend>Datos del estudiante:</legend>
@@ -59,10 +59,10 @@
             </div>
         
             <div class="checkbox-group">
-                <input type="checkbox" id="practica1" name="practica1" class="custom-checkbox">
+                <input type="checkbox" id="practica1" name="practica1" class="custom-checkbox" onclick="toggleCheckbox(this)">
                 <label for="practica1">Práctica I</label>
             
-                <input type="checkbox" id="practica2" name="practica2" class="custom-checkbox">
+                <input type="checkbox" id="practica2" name="practica2" class="custom-checkbox" onclick="toggleCheckbox(this)">
                 <label for="practica2">Práctica II</label>
             </div>
         
@@ -102,12 +102,12 @@
             
             <div class="form-group">
                 <label for="fecha_inicio">Fecha de Inicio</label>
-                <input type="date" id="fecha_inicio" name="fecha_inicio" placeholder="Ingrese Razón Social" required>
+                <input type="date" id="fecha_inicio" name="fecha_inicio" required>
             </div>
         
             <div class="form-group">
                 <label for="fecha_termino">Fecha de Término</label>
-                <input type="date" id="fecha_termino" name="fecha_termino" placeholder="Ingrese Razón Social" required>
+                <input type="date" id="fecha_termino" name="fecha_termino" required>
             </div>
         
             <table>
@@ -134,9 +134,14 @@
                 </tr>
             </table>   
         
-            <button type="submit">Enviar</button>
+            <div class="button-container">
+                <button type="submit" class="send-button">Enviar</button>
+            </div>
         </form>
                 
     </div>
+
+    <script src="{% static 'js/checkbox_validation.js' %}"></script>
+
     {% endblock %}
 </html>

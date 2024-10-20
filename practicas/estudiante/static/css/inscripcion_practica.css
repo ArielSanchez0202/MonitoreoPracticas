@@ -52,7 +52,7 @@ label {
     margin-bottom: 5px;
 }
 
-input[type="text"], input[type="email"], input[type="number"] {
+input[type="text"], input[type="email"], input[type="number"], input[type="date"] {
     width: 100%;
     padding: 10px;
     border: 1px solid black;
@@ -104,17 +104,33 @@ input[type="text"], input[type="email"], input[type="number"] {
     font-weight: bold;
 }
 
-button {
+/* Contenedor del botón */
+.button-container {
+    display: flex;
+    justify-content: center; /* Centra el botón horizontalmente */
+    align-items: center;     /* Centra el botón verticalmente si es necesario */
+    width: 100%;             /* Asegura que ocupe todo el ancho */
+    margin-top: 20px;        /* Ajusta el margen superior según tus necesidades */
+    grid-column: span 2; /* Asegura que el botón ocupe todo el ancho */
+}
+
+/* Estilos específicos para el botón de enviar */
+.send-button {
     display: block;
-    width: 100%;
+    width: 150px; /* Ajusta este valor según sea necesario */
     padding: 10px;
     background-color: #DD211C;
-    color: white;
+    color: white; /* Color de texto negro */
     border: none;
     border-radius: 5px;
     font-size: 1em;
     cursor: pointer;
-    grid-column: span 2; /* Asegura que el botón ocupe todo el ancho */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+    transition: background-color 0.3s ease; /* Transición suave para hover */
+}
+
+.send-button:hover {
+    background-color: #d64540; 
 }
 
 .image-button {

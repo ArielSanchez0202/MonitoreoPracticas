@@ -24,7 +24,7 @@ class InscripcionPractica(models.Model):
     actividades_realizar = models.CharField(max_length=100)
 
     class Meta:
-        db_table = 'public.estudiante_inscripcionpractica'  # Enlazar a la tabla específica
+        db_table = 'estudiante_inscripcionpractica'  # Enlazar a la tabla específica
 
     def __str__(self):
         return self.nombre_completo

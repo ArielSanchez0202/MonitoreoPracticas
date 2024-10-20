@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import InscripcionPractica
 from datetime import datetime
+from django.http import JsonResponse
 
 def estudiante_view(request):
     practicas = InscripcionPractica.objects.all()  # O filtra por estudiante si es necesario
@@ -85,3 +86,7 @@ def inscripcion_practica_view(request):
         return redirect('estudiante')
 
     return render(request, 'inscripcion_practica.html')
+
+def verificar_practica1(request):
+    existe_practica1 = InscripcionPractica.objects.filter(practica1=True).exists()
+    return JsonResponse({'existe_practica1': existe_practica1})
