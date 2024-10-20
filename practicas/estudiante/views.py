@@ -1,12 +1,14 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import InscripcionPractica  # Asegúrate de que este modelo esté definido
+from .models import InscripcionPractica
+from datetime import datetime
 
 def estudiante_view(request):
-    return render(request, 'estudiante.html')
-
-def inscripcion_practica_view(request):
-    return render(request, 'inscripcion_practica.html')
+    practicas = InscripcionPractica.objects.all()  # O filtra por estudiante si es necesario
+    context = {
+        'practicas': practicas,
+    }
+    return render(request, 'estudiante.html', context)
 
 def inscripcion_practica_view(request):
     if request.method == 'POST':
@@ -25,8 +27,21 @@ def inscripcion_practica_view(request):
         cargo = request.POST.get('cargo')
         telefono_jefe = request.POST.get('telefono_jefe')
         correo_jefe = request.POST.get('correo_jefe')
+
+        # Convertir las fechas al formato correcto
         fecha_inicio = request.POST.get('fecha_inicio')
         fecha_termino = request.POST.get('fecha_termino')
+
+        try:
+            # Asegurarse de que las fechas estén en el formato YYYY-MM-DD
+            fecha_inicio = datetime.strptime(fecha_inicio, '%Y-%m-%d').date()
+            fecha_termino = datetime.strptime(fecha_termino, '%Y-%m-%d').date()
+        except ValueError:
+            # Manejar el error si las fechas no están en el formato correcto
+            return render(request, 'inscripcion_practica.html', {
+                'error': 'Formato de fecha inválido. Use YYYY-MM-DD.'
+            })
+
         horario_trabajo = request.POST.get('horario_trabajo')
         horario_colacion = request.POST.get('horario_colacion')
         cargo_desarrollar = request.POST.get('cargo_desarrollar')
@@ -59,7 +74,12 @@ def inscripcion_practica_view(request):
         )
 
         # Guardar la inscripción en la base de datos
-        inscripcion.save()
+        try:
+            inscripcion.save()
+            return redirect('estudiante')
+        except Exception as e:
+            # Manejar el error (puedes agregar un mensaje de error para mostrar en la plantilla)
+            print(f'Error al guardar: {e}')
 
         # Redirigir a estudiante.html después de enviar el formulario exitosamente
         return redirect('estudiante')

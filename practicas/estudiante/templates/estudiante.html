@@ -1,14 +1,35 @@
 <!-- estudiante.html -->
 <!DOCTYPE html>
-<html>
+<html lang="es">
+    {% load static %}
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estudiante</title>
+    <link rel="stylesheet" href="{% static 'css/estudiante.css' %}">
 </head>
 <body>
-    <h1>Bienvenido a la página del estudiante</h1>
+    <h1>PRÁCTICAS</h1>
 
     <form action="/estudiante/inscripcion_practica/" method="get">
         <button type="submit">Ingresar nueva práctica</button>
     </form>
+
+    <div class="practicas-container">
+        {% for practica in practicas %}
+        <div class="practica-item">
+            <div>
+                <strong>{{ practica.practica1|yesno:"Práctica I,Práctica II" }}</strong><br>
+                Estado: {{ practica.get_estado_display }}<br>  <!-- Si usas un campo ChoiceField para estado -->
+                Nota: {{ practica.nota }}  <!-- Asegúrate de que existe un campo nota en tu modelo -->
+            </div>
+            <button class="detalle-btn">Detalle</button>
+        </div>
+        {% empty %}
+        <p>No hay prácticas registradas.</p>
+        {% endfor %}
+    </div>
+
 </body>
 </html>
