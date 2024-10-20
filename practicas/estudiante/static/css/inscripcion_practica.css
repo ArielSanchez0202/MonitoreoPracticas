@@ -59,6 +59,13 @@ input[type="text"], input[type="email"], input[type="number"] {
     border-radius: 5px;
 }
 
+/* Checkboxes alineadas horizontalmente */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
 /* Ocultar el checkbox original */
 .custom-checkbox {
     display: none;
