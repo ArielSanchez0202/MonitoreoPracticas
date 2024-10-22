@@ -7,6 +7,7 @@ from .forms import EstudianteForm
 from django.http import HttpResponse
 import openpyxl
 from django.core.files.storage import FileSystemStorage
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -120,6 +121,8 @@ def descargar_plantilla_estudiantes(request):
     response['Content-Disposition'] = 'attachment; filename=plantilla_estudiantes.xlsx'
     df.to_excel(response, index=False, engine='openpyxl')
     return response
+
+@login_required
 def listar_estudiantes(request):
     estudiantes = Estudiante.objects.all()  # Obtiene todos los estudiantes
     return render(request, 'coordinador/listar_estudiantes.html', {'estudiantes': estudiantes})

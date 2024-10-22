@@ -19,12 +19,16 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path,include
 
+from autenticacion import views
+
 urlpatterns = [
+    path('', views.login_view, name='login'), 
     path('admin/', admin.site.urls),
     path('',include('core.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('coordinador/', include('coordinador.urls')),
     path('estudiante/', include('estudiante.urls')),
+    path('autenticacion/', include('autenticacion.urls')),
 ]
 
 if settings.DEBUG:

@@ -2,7 +2,7 @@ from django.urls import path,include
 from . import views
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('', views.login_view, name='login'), 
     path('coordinador/', include('coordinador.urls')),
     path('listado/',include('listado.urls')),
     path('solicitudes/',include('solicitudes.urls')),
@@ -12,4 +12,5 @@ urlpatterns = [
     path('infofinal/',include('infofinal.urls')),
     path('salir' ,views.salir, name='salir'),
     path('perfil', views.perfil,name='perfil'),
+    path('estudiante',include('estudiante.urls')),
 ]
